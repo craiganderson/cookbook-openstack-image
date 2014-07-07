@@ -140,8 +140,8 @@ api_bind = endpoint 'image-api-bind'
 #           Rackspace Cloud Files.
 if glance['api']['swift_store_auth_address'].nil?
   swift_store_auth_address = auth_uri
-  swift_store_user = "#{glance['service_tenant_name']}_#{glance['service_user']}"
-  swift_user_tenant = nil
+  swift_store_user = "#{glance['service_user']}"
+  swift_user_tenant = "#{glance['service_user_tenant']}"
   swift_store_key = service_pass
   swift_store_auth_version = 2
 else
