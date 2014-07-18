@@ -30,7 +30,7 @@ action :upload do
   name = new_resource.image_name
   url = new_resource.image_url
 
-  ep = endpoint 'image-api'
+  ep = endpoint 'image-api-internal'
   api = ep.to_s.gsub(ep.path, '') # remove trailing /v2
 
   type = new_resource.image_type

@@ -32,6 +32,7 @@ token = secret 'secrets', 'openstack_identity_bootstrap_token'
 auth_url = ::URI.decode identity_admin_endpoint.to_s
 
 api_endpoint = endpoint 'image-api'
+api_endpoint_internal = endpoint 'image-api-internal'
 
 service_pass = get_password 'service', 'openstack-image'
 service_tenant_name = node['openstack']['image']['service_tenant_name']
@@ -56,8 +57,8 @@ openstack_identity_register 'Register Image Endpoint' do
   bootstrap_token token
   service_type 'image'
   endpoint_region region
-  endpoint_adminurl api_endpoint.to_s
-  endpoint_internalurl api_endpoint.to_s
+  endpoint_adminurl api_endpoint_internal.to_s
+  endpoint_internalurl api_endpoint_internal.to_s
   endpoint_publicurl api_endpoint.to_s
 
   action :create_endpoint
