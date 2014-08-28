@@ -1,40 +1,4 @@
 {
-    "is_admin": "role:admin",
-    "is_att_admin": "role:att_staff_image_admin",
-    "is_att_viewer": "role:att_staff_image_viewer",
-    "is_ccp_admin": "role:ccp_tenant_image_admin",
-    "is_ccp_viewer": "role:ccp_tenant_image_viewer",
-    "is_member": "role:_member_",
-
-    "all_users": "rule:is_att_admin or rule:is_ccp_admin or rule:is_ccp_viewer or rule:is_att_viewer or rule:is_admin or rule:is_member",
-    "all_admins": "rule:is_att_admin or rule:is_ccp_admin or rule:is_admin",
-
-    "context_is_admin":  "rule:all_admins or rule:is_admin",
-
-    "add_image": "rule:all_admins",
-    "delete_image": "rule:all_admins",
-    "get_image": "rule:all_users",
-    "get_images": "rule:all_users",
-    "modify_image": "rule:all_admins",
-    "publicize_image": "rule:is_att_admin or rule:is_admin",
-    "copy_from": "rule:all_admins",
-
-    "download_image": "rule:all_admins",
-    "upload_image": "rule:all_admins",
-    "delete_image_location": "rule:all_admins",
-    "get_image_location": "rule:all_users",
-    "set_image_location": "rule:all_admins",
-
-    "add_member": "rule:all_admins",
-    "delete_member": "rule:all_admins",
-    "get_member": "rule:all_admins",
-    "get_members": "rule:all_admins",
-    "modify_member": "rule:all_admins",
-
-    "manage_image_cache": "rule:all_admins",
-
-    "get_task": "",
-    "get_tasks": "",
-    "add_task": "",
-    "modify_task": ""
+    "default": [],
+    "manage_image_cache": [["role:admin"]]
 }
