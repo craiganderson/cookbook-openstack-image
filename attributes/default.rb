@@ -29,6 +29,7 @@ default['openstack']['image']['custom_template_banner'] = '
 '
 
 default['openstack']['endpoints']['image-api-internal']['uri'] = node['openstack']['endpoints']['image-api']['uri']
+default['openstack']['endpoints']['image-api-admin']['uri'] = node['openstack']['endpoints']['image-api-internal']['uri']
 default['openstack']['endpoints']['image-registry-internal']['uri'] = node['openstack']['endpoints']['image-registry']['uri']
 
 default['openstack']['image']['verbose'] = 'False'
