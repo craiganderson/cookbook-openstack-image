@@ -115,9 +115,10 @@ glance = node['openstack']['image']
 
 identity_endpoint = endpoint 'identity-api'
 identity_admin_endpoint = endpoint 'identity-admin'
+identity_internal_endpoint = endpoint 'identity-api-internal'
 service_pass = get_password 'service', 'openstack-image'
 
-auth_uri = auth_uri_transform identity_endpoint.to_s, node['openstack']['image']['api']['auth']['version']
+auth_uri = auth_uri_transform identity_internal_endpoint.to_s, node['openstack']['image']['api']['auth']['version']
 
 db_user = node['openstack']['db']['image']['username']
 db_pass = get_password 'db', 'glance'
@@ -179,7 +180,7 @@ template '/etc/glance/glance-api.conf' do
     sql_connection: sql_connection,
     glance_flavor: glance_flavor,
     auth_uri: auth_uri,
-    identity_admin_endpoint: identity_admin_endpoint,
+    identity_internal_endpoint: identity_internal_endpoint,
     service_pass: service_pass,
     swift_store_key: swift_store_key,
     swift_user_tenant: swift_user_tenant,
